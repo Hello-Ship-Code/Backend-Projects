@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Short Hand URL</title>
+  </head>
+  <body>
+    <h1>Short Hand URL</h1>
+
+    <% if (error) { %>
+      <h1 id="error"><%= error %></h1>
+      <script>
+        setTimeout(() => {
+          const errorElement = document.getElementById("error");
+          if (errorElement) errorElement.remove();
+        }, 3000); // Error disappears after 3 seconds
+      </script>
+    <% } %>
+    
+    <!-- URL Submission Form -->
+    <div id="form">
+      <form method="POST" action="/url" id="urlForm">
+        <input type="text" name="redirectUrl" id="redirectUrl" placeholder="Enter the URL" required />
+        <button type="submit">Add me</button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("urlForm").addEventListener("submit", function () {
+        setTimeout(() => {
+          const inputField = document.getElementById("redirectUrl");
+          console.log(`Clearing input field after submission. Previous value:`, inputField.value);
+          inputField.value = ""; // Clears the input field after a short delay
+        }, 500); // Wait for 0.5s before clearing
+      });
+    </script>
+
+    <% if (data && data.length > 0) { %>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Short ID</th>
+            <th>Redirect URL</th>
+            <th>Visited</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(element => { %>
+            <tr>
+              <td>
+                <a href="http://localhost:8000/url/<%= element.shortId %>">
+                  <%= element.shortId %>
+                </a>
+              </td>
+              <td><%= element.redirectUrl %></td>
+              <td><%= element.visitHistory ? element.visitHistory.length : 0 %> times</td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No data available</p>
+    <% } %>
+  </body>
+</html>
