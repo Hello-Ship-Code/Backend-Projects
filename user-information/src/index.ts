@@ -1,6 +1,6 @@
 import express from 'express'
-import { connect } from 'mongoose'
 
+import { connect } from './connection'
 import { env } from './env.config'
 
 import { useRouter } from './routes/router'
@@ -8,7 +8,7 @@ import { useRouter } from './routes/router'
 const app = express()
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 app.use('/user', useRouter);
 
