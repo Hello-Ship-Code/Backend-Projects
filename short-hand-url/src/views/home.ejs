@@ -20,7 +20,7 @@
     
     <!-- URL Submission Form -->
     <div id="form">
-      <form method="POST" action="/url" id="urlForm">
+      <form method="POST" action="/" id="urlForm">
         <input type="text" name="redirectUrl" id="redirectUrl" placeholder="Enter the URL" required />
         <button type="submit">Add me</button>
       </form>
@@ -49,7 +49,7 @@
           <% data.forEach(element => { %>
             <tr>
               <td>
-                <a href="http://localhost:8000/url/<%= element.shortId %>">
+                <a href="http://localhost:8000/<%= element.shortId %>">
                   <%= element.shortId %>
                 </a>
               </td>

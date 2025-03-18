@@ -31,7 +31,7 @@ export const postUrl: RequestHandler = async (req, res, next) => {
       visitHistory: [],
     });
 
-    res.redirect("/url");
+    res.redirect("/");
   } catch (err) {
     next(err);
   }

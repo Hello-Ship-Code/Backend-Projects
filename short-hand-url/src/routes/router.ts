@@ -6,7 +6,7 @@ import { postUrl } from "../controllers/urls/post-url";
 
 const useRouter = Router();
 
-useRouter.route("/").post(postUrl).get(getAllUrl);
+useRouter.route("/").get(getAllUrl).post(postUrl)
 
 useRouter.route("/:shortId").get(getUrlById);
 

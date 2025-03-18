@@ -19,7 +19,7 @@ app.set("views", viewsPath);
 
 app.use(errorHandle);
 
-app.use("/url", useRouter);
+app.use("/", useRouter);
 
 // Database Connection
 connect(env.DATABASE_URL).then(() => console.log(`connected to DataBase...`));
