@@ -1,7 +1,7 @@
 import { sendError, sendSuccess, type PostHandler } from "../../Handlers/respond-handler"
 import { type IUser, user } from "../../models/user"
 
-import { validateUserData } from './../../utils/validate-user';
+import { validateUserData } from '../../utils/validate-user';
 
 export const postUser: PostHandler<IUser> = async (req, res) => {
   try {

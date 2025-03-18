@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --watch",
-    "start": "nodemon --env-file=.env dist/index.js",
-    "dev": "ts-node src/index.ts",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "eslint . --ignore-pattern .gitignore",
+    "format": "prettier --write . --ignore-path .gitignore"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.96",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "@typescript-eslint/parser": "^8.23.0",
     "eslint": "^9.19.0",
@@ -24,6 +25,11 @@
     "express": "^4.21.2",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
     "typescript-eslint": "^8.23.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.12.1"
   }
 }
