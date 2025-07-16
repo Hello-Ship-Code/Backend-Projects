@@ -5,6 +5,7 @@ A simple URL shortening API built using **Node.js**, **Express**, **Mongoose**, 
 ---
 
 ## 🚀 Features
+
 - ✅ Generate short URLs for long links
 - 📊 Track visit history for analytics
 - 🖥️ Simple EJS-based view engine setup for rendering pages
@@ -14,6 +15,7 @@ A simple URL shortening API built using **Node.js**, **Express**, **Mongoose**, 
 ---
 
 ## 🛠️ Tech Stack
+
 - 🟩 **Node.js**
 - ⚡ **Express.js**
 - 🍃 **Mongoose**
@@ -25,25 +27,27 @@ A simple URL shortening API built using **Node.js**, **Express**, **Mongoose**, 
 ## 📥 Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone <repository-url>
    cd short-hand-url  # Change this if you rename the project
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
-3. **Environment Variables:**
-Create a `.env` file in the root directory with the following:
+3. **Environment Variables:** Create a `.env` file in the root directory with the following:
 
-```
+```c
 PORT=3000
 DATABASE_URL=<your-mongodb-connection-url>
 ```
 
-4. **Start the server:**
+4.**Start the server:**
+
    ```bash
    npm run dev
    ```
@@ -65,6 +69,7 @@ DATABASE_URL=<your-mongodb-connection-url>
 ## 📄 Example Data Structure
 
 **POST Request Body:**
+
 ```json
 {
   "redirectUrl": "https://example.com"
@@ -72,6 +77,7 @@ DATABASE_URL=<your-mongodb-connection-url>
 ```
 
 **Response:**
+
 ```json
 {
   "shortId": "abc123",
@@ -83,7 +89,8 @@ DATABASE_URL=<your-mongodb-connection-url>
 ---
 
 ## 🗂️ Project Structure
-```
+
+```c
 src/
 ├── controllers/
 │   ├── urls/
@@ -104,6 +111,7 @@ src/
 ---
 
 ## 🧪 Running Tests
+
 - Use **Postman** or **Thunder Client** to test API endpoints.
 - Example:
   - **POST** `/` to create a short URL.
@@ -112,6 +120,7 @@ src/
 ---
 
 ## 🌟 Future Improvements
+
 - 🚨 Add input validation using **Zod** or **Joi**.
 - 📋 Add detailed analytics for URL visits.
 - 🔐 Implement user authentication for URL creation.
@@ -120,6 +129,7 @@ src/
 ---
 
 ## 🤝 Contributing
+
 1. 🍴 Fork the repository.
 2. 🌱 Create a new branch.
 3. 🔨 Make your changes.
@@ -127,11 +137,12 @@ src/
 
 ---
 
-### 🐙 Connect with Me  
+### 🐙 Connect with Me
+
 📌 GitHub: [Hello-ship-code](https://github.com/Hello-ship-code) 😊🔥
 
 ---
 
 ## 📜 License
-This project is licensed under the **MIT License**.
 
+This project is licensed under the **MIT License**.

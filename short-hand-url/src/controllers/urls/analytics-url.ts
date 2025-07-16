@@ -1,38 +1,38 @@
 /* eslint-disable no-unreachable */
-import { type RequestHandler } from "express";
+import { type RequestHandler } from 'express'
 
-import { UrlModel } from "../../models/url-model";
+import { UrlModel } from '../../models/url-model'
 
-import HttpError from "../../utils/HttpError";
+import HttpError from '../../utils/HttpError'
 
 export type AnalyticsHandler = RequestHandler<{
-  shortId: string;
-}>;
+  shortId: string
+}>
 
 export const getUrlById: AnalyticsHandler = async (req, res, next) => {
   try {
-    const shortId = req.params.shortId;
+    const shortId = req.params.shortId
     if (!shortId) {
-      throw new HttpError("url not found", 404)
+      throw new HttpError('url not found', 404)
       return
     }
     const result = await UrlModel.findOneAndUpdate(
       {
-        shortId,
+        shortId
       },
       {
         $push: {
-          visitHistory: [{ timestamp: Date.now() }],
-        },
-      },
-    );
+          visitHistory: [{ timestamp: Date.now() }]
+        }
+      }
+    )
 
     if (!result) {
-      throw new HttpError(`url doesn't exist`, 404);
-      return;
+      throw new HttpError(`url doesn't exist`, 404)
+      return
     }
-    res.redirect(result.redirectUrl);
+    res.redirect(result.redirectUrl)
   } catch (error) {
-    next(error);
+    next(error)
   }
-};
+}
